@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <tbody>
+    {{#each itemController="todo"}}
+      <tr>
+        <td>{{name}}</td>
+        <td class="text-right">
+          <button {{action "removeTodo"}} class="btn btn-primary btn-xs">Remove</button>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+{{#unless model}}
+  <div class="alert alert-info">You dawg you have nothing todo.</div>
+{{/unless}}
