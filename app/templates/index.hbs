@@ -2,9 +2,10 @@
   <tbody>
     {{#each itemController="todo"}}
       <tr>
-        <td>{{name}}</td>
+        <td width="2%"><input type="checkbox" {{action "markDone"}} {{bind-attr checked="done"}}></td>
+        <td><span {{bind-attr class="done"}}>{{name}}</span></td>
         <td class="text-right">
-          <button {{action "removeTodo"}} class="btn btn-primary btn-xs">Remove</button>
+          <button {{action "removeTodo"}} class="remove btn btn-primary btn-xs">Remove</button>
         </td>
       </tr>
     {{/each}}
