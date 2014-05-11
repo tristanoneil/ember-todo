@@ -1,3 +1,12 @@
+<form {{action addTodo}}>
+  <div class="form-group">
+    {{input type="text" placeholder="What is there todo?" class="form-control" value=newTodo}}
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Add Todo" class="btn btn-primary">
+  </div>
+</form>
+
 <table class="table table-striped">
   <tbody>
     {{#each itemController="todo"}}
@@ -5,7 +14,7 @@
         <td width="2%"><input type="checkbox" {{action "markDone"}} {{bind-attr checked="done"}}></td>
         <td><span {{bind-attr class="done"}}>{{name}}</span></td>
         <td class="text-right">
-          <button {{action "removeTodo"}} class="remove btn btn-primary btn-xs">Remove</button>
+          <button {{action "removeTodo"}} class="remove btn btn-default btn-xs">Remove</button>
         </td>
       </tr>
     {{/each}}
